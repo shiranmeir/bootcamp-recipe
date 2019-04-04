@@ -13,10 +13,18 @@
         <button type="button" id="button">Search!</button>
     </div>
     
-        <script id="array-template" type="text/x-handlebars-template">
+    <div class="Ingredients"></div>
+        <script id="food-template" type="text/x-handlebars-template">
     
-            {{#each array}}
-           
+            {{#each data}}
+           <div class="food-menu">
+            <div id="title">{{title}} <a href=`{{href}}`></a>
+            </div>
+            <div id="pic"></div>
+            <img id="img" src="http://img.recipepuppy.com/{{thumbnail}}" >
+            </div>
+            <div id="ingredients">{{ingredients}}</div>
+           </div>
             {{/each}}
         
         </script>

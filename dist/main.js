@@ -1,13 +1,14 @@
 $("#button").on("click", function(){
     let newFood = $("#inputFood").val()
-    $.get(`/recipes/${newFood}`, function(foods){
-        console.log(foods)
+    $.get(`/recipes/${newFood}`, function(data){
+        renderIngredients(data)
     })
 })
 
-// const render= function(foods){
-//     let source = $('#arrayid-template').html();
-//     let template = Handlebars.compile(source);
-//     let newHTML = template({players});
-//     $('.container').append(newHTML);
-// }
+const renderIngredients=function(data) {
+    $(".Ingredients").empty()
+    let source = $("#food-template").html();
+    let template = Handlebars.compile(source);
+    let newHTML = template(data);
+    $(".Ingredients").append(newHTML); 
+}
